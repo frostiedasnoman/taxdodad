@@ -2,7 +2,7 @@ class TaxCalculator
   # only console service so don't need a UseCase
 
   def initialize(amount)
-    @taxable_amount = BigDecimal(amount).round
+    @taxable_amount = BigDecimal(amount)
     @total_tax_to_pay = BigDecimal("0")
     @taxable_amount_remaining = @taxable_amount
   end
@@ -27,10 +27,10 @@ class TaxCalculator
   def init_tax_bands
     bands = []
     bands << TaxBand.new(BigDecimal("0"), BigDecimal("15600"), BigDecimal("10.5"))
-    bands << TaxBand.new(BigDecimal("15601"), BigDecimal("53500"), BigDecimal("17.5"))
-    bands << TaxBand.new(BigDecimal("53501"), BigDecimal("78100"), BigDecimal("30"))
-    bands << TaxBand.new(BigDecimal("78101"), BigDecimal("180000"), BigDecimal("33"))
-    bands << TaxBand.new(BigDecimal("180101"), BigDecimal("Infinity"), BigDecimal("39"))
+    bands << TaxBand.new(BigDecimal("15600"), BigDecimal("53500"), BigDecimal("17.5"))
+    bands << TaxBand.new(BigDecimal("53500"), BigDecimal("78100"), BigDecimal("30"))
+    bands << TaxBand.new(BigDecimal("78100"), BigDecimal("180000"), BigDecimal("33"))
+    bands << TaxBand.new(BigDecimal("180100"), BigDecimal("Infinity"), BigDecimal("39"))
   end
 
   # Maybe should be a model?
