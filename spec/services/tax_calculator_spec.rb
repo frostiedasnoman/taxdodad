@@ -24,8 +24,8 @@ RSpec.describe TaxCalculator do
     end
   end
 
-  context "with a taxable amount of $200,000.00" do
-    let(:taxable_amount) { "200000.00" }
+  context "with a taxable amount of $220,000.00" do
+    let(:taxable_amount) { "220000.00" }
     it "returns a total tax to pay of $64,877.50" do
       expect(calc).to eq(BigDecimal("64877.50"))
     end
