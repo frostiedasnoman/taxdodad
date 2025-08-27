@@ -30,7 +30,7 @@ class TaxCalculator
     bands << TaxBand.new(BigDecimal("15600"), BigDecimal("53500"), BigDecimal("17.5"))
     bands << TaxBand.new(BigDecimal("53500"), BigDecimal("78100"), BigDecimal("30"))
     bands << TaxBand.new(BigDecimal("78100"), BigDecimal("180000"), BigDecimal("33"))
-    bands << TaxBand.new(BigDecimal("180100"), BigDecimal("Infinity"), BigDecimal("39"))
+    bands << TaxBand.new(BigDecimal("180000"), BigDecimal("Infinity"), BigDecimal("39"))
   end
 
   # Maybe should be a model?
